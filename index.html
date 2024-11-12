@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Pecentage</h2>
+        <form id="marksForm">
+            <label for="x1">Enter Marks for Subject 1</label>
+            <input type="text" id="x1" class="input-field" placeholder="Enter marks">
+
+            <label for="x2">Enter Marks for Subject 2</label>
+            <input type="text" id="x2" class="input-field" placeholder="Enter marks">
+
+            <label for="x3">Enter Marks for Subject 3</label>
+            <input type="text" id="x3" class="input-field" placeholder="Enter marks">
+
+            <button type="button" id="btn" class="btn">Submit</button>
+        </form>
+        <div id="mark" class="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: slideInFromTop 1s ease-out;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+h2 {
+    color: #4a90e2;
+    margin-bottom: 20px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1s;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: 500;
+    color: #666;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.input-field {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.input-field:nth-child(1) { animation-delay: 1.2s; }
+.input-field:nth-child(3) { animation-delay: 1.4s; }
+.input-field:nth-child(5) { animation-delay: 1.6s; }
+
+.input-field:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.btn {
+    padding: 10px;
+    background-color: #4a90e2;
+    color: #ffffff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.8s;
+}
+
+.btn:hover {
+    background-color: #357abd;
+    transform: scale(1.05);
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 2s;
+}
+
+</style>
