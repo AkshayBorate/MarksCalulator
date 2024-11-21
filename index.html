@@ -1,55 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marks</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+
+  </head>
+  <body>
     <div class="container">
-        <h2>Pecentage</h2>
-        <form id="marksForm">
-            <label for="x1">Enter Marks for Subject 1</label>
-            <input type="text" id="x1" class="input-field" placeholder="Enter marks">
+      <h2>Pecentage</h2>
+      <form id="marksForm">
+        <label for="x1">Enter Marks for Physics</label>
+        <input
+          type="text"
+          id="x1"
+          class="input-field"
+          placeholder="Enter marks"
+        />
 
-            <label for="x2">Enter Marks for Subject 2</label>
-            <input type="text" id="x2" class="input-field" placeholder="Enter marks">
+        <label for="x2">Enter Marks for Chemistry</label>
+        <input
+          type="text"
+          id="x2"
+          class="input-field"
+          placeholder="Enter marks"
+        />
 
-            <label for="x3">Enter Marks for Subject 3</label>
-            <input type="text" id="x3" class="input-field" placeholder="Enter marks">
+        <label for="x3">Enter Marks for Math</label>
+        <input
+          type="text"
+          id="x3"
+          class="input-field"
+          placeholder="Enter marks"
+        />
 
-            <button type="button" id="btn" class="btn">Submit</button>
-        </form>
-        <div id="mark" class="result"></div>
+        <button type="button" id="btn" class="btn">Submit</button>
+      </form>
+      <div id="mark" class="result"></div>
     </div>
+    <div class="container">
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
+        <figure class="highcharts-figure">
+          <div id="container"></div>
+          <p class="highcharts-description">
+         
+          </p>
+        </figure>
+      </div>
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
 
-
 <style>
-   * {
+  * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
+  }
 
-body {
+  body {
+    background-image: url("back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: Arial, sans-serif;
     background-color: #f4f7f9;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #333;
+    color: #cf2626;
     overflow: hidden;
     animation: fadeIn 1s ease-in;
-}
+  }
 
-.container {
-    background-color: #ffffff;
+  .container {
+    background-color: transparent !important;;
     width: 100%;
     max-width: 400px;
     padding: 20px;
@@ -58,70 +90,93 @@ body {
     text-align: center;
     animation: slideInFromTop 1s ease-out;
     animation-delay: 0.5s;
-}
+    
+  }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
-@keyframes slideInFromTop {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
-h2 {
+  h2 {
     color: #4a90e2;
     margin-bottom: 20px;
     font-weight: bold;
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
     animation-delay: 1s;
-}
+  }
 
-form {
+  form {
     display: flex;
     flex-direction: column;
-}
+  }
 
-label {
+  label {
     font-size: 1rem;
     margin-bottom: 8px;
     text-align: left;
     font-weight: 500;
-    color: #666;
+    color: #f40808;
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
-}
+  }
 
-@keyframes fadeInUp {
-    from { transform: translateY(10px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
-.input-field {
+  .input-field {
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid #bb3e3e;
+    border-radius: 10px;
     font-size: 1rem;
-    color: #333;
+    color: #000000;
     background-color: #f9f9f9;
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
-}
+  }
 
-.input-field:nth-child(1) { animation-delay: 1.2s; }
-.input-field:nth-child(3) { animation-delay: 1.4s; }
-.input-field:nth-child(5) { animation-delay: 1.6s; }
+  .input-field:nth-child(1) {
+    animation-delay: 1.2s;
+  }
+  .input-field:nth-child(3) {
+    animation-delay: 1.4s;
+  }
+  .input-field:nth-child(5) {
+    animation-delay: 1.6s;
+  }
 
-.input-field:focus {
+  .input-field:focus {
     outline: none;
     border-color: #4a90e2;
     box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
-}
+  }
 
-.btn {
+  .btn {
     padding: 10px;
     background-color: #4a90e2;
     color: #ffffff;
@@ -133,22 +188,29 @@ label {
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
     animation-delay: 1.8s;
-}
+  }
 
-.btn:hover {
+  .btn:hover {
     background-color: #357abd;
     transform: scale(1.05);
-}
+  }
 
-.result {
+  .result {
     margin-top: 20px;
     font-size: 1.1rem;
-    color: #333;
+    color: #ef0505;
     font-weight: bold;
     opacity: 0;
     transform: translateY(10px);
     animation: fadeInUp 1s ease forwards;
     animation-delay: 2s;
+  }
+Highcharts.container{
+    
+}
+#container {
+  height: 400px;
 }
 
 </style>
+
